@@ -35,3 +35,15 @@ app.use(session({
     }
 }));
 app.use(cors());
+
+setTimeout(() => {
+    app.get('/api/user-data', userController.readUserData);
+
+    app.post('/api/user-data/cart', userController.addToCart);
+
+    app.delete('/api/user-data/cart/:id', userController.removeFromCart);
+
+    app.post('/api/login', userController.login)
+
+    app.post('/api/logout', userController.logout)
+}, 200)
