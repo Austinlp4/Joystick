@@ -13,3 +13,25 @@ const mongoose = require('mongoose');
 const express = require('express');
 
 const app = express();
+
+const PORT = 5000;
+
+mongoose.connect(process.env.CONNECTION_STRING,
+    { useNewUrlParser: true },
+    (err) => {
+        if(err) {
+            console.log('Database Error ==>', err):
+        }
+        console.log('Connected to DB');
+});
+
+app.use(bodyParser.json());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 14
+    }
+}));
+app.use(cors());
