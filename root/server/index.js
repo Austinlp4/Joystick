@@ -54,4 +54,16 @@ setTimeout(() => {
     app.get('/api/products', productsController.readAllProducts);
 
     app.get('/api/products/:id', productsController.readProduct);
+
+    //Admin Endpoints
+
+    app.get('/api/users', adminController.getAdminUsers);
+
+    app.post('/api/products', adminController.createProduct);
+
+    app.put('/api/product/:id', adminController.updateProduct);
+
+    app.delete('/api/products/:id', adminController.deleteProduct);
 }, 200)
+
+app.listen(PORT, () => console.log(`Listen on Port:${PORT}`))
