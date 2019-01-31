@@ -37,6 +37,8 @@ app.use(session({
 app.use(cors());
 
 setTimeout(() => {
+    // User Endpoints
+
     app.get('/api/user-data', userController.readUserData);
 
     app.post('/api/user-data/cart', userController.addToCart);
@@ -46,4 +48,10 @@ setTimeout(() => {
     app.post('/api/login', userController.login)
 
     app.post('/api/logout', userController.logout)
+
+    // Products Endpoints
+
+    app.get('/api/products', productsController.readAllProducts);
+
+    app.get('/api/products/:id', productsController.readProduct);
 }, 200)
