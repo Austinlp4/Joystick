@@ -32,5 +32,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "proxy": {
+    "/auth/callback": {
+      "target": "http://localhost:5000"
+    },
+    "/api": {
+      "target": "http://localhost:5000"
+    }
+  }
 }
