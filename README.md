@@ -1,2 +1,3 @@
 # Joystick
-A gaming hub and marketplace
+
+Being built using a MERN stack. Joystick will be a gaming tournament site.
